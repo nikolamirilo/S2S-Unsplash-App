@@ -1,0 +1,25 @@
+@mixin flex($direction, $justifyContent, $alignItems) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+}
+@mixin media($breakpoint) {
+  @media screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+@mixin backgroundObjectImage($width, $height) {
+  background-position: center;
+  background-size: cover;
+  width: $width;
+  height: $height;
+}
+@mixin grid($templateColumns) {
+  display: grid;
+  grid-template-columns: $templateColumns;
+}
+@mixin border {
+  box-shadow: inset 0px 0px 1px rgba(255, 250, 250, 0.521), 1px 0px 10px #eba249;
+  border: 2px solid #eba249;
+}
