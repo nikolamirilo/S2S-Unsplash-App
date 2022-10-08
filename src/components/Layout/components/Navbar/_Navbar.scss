@@ -5,4 +5,35 @@
   background-color: $orange;
   position: fixed;
   top: 0;
+  @include flex(row, space-between, center);
+  padding: 0 4vw;
+  @include media($xs) {
+    padding: 0 1vw;
+  }
+  .logo {
+    @include flex(row, center, center);
+    height: 8vh;
+    width: fit-content;
+    img {
+      height: 5vh;
+      width: auto;
+    }
+  }
+  .links {
+    @include flex(row, space-around, center);
+    height: 8vh;
+    width: 30%;
+    @include media($sm) {
+      width: fit-content;
+    }
+    @include media($xs) {
+      height: fit-content;
+      @include flex(column, space-around, center);
+    }
+    a {
+      color: $black;
+      text-decoration: none;
+      font-size: 1.4rem;
+    }
+  }
 }

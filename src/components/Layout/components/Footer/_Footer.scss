@@ -5,4 +5,9 @@
   background-color: $orange;
   position: absolute;
   bottom: 0;
+  @include flex(row, center, center);
+  p {
+    color: $black;
+    font-size: 1.2rem;
+  }
 }
