@@ -5,9 +5,23 @@
   background-color: $orange;
   position: absolute;
   bottom: 0;
-  @include flex(row, center, center);
+  @include flex(row-reverse, center, center);
+  gap: 2rem;
+  padding: 3vh 5vw;
+  @include media($xs) {
+    @include flex(column, center, center);
+  }
   p {
     color: $black;
     font-size: 1.2rem;
+  }
+  .contact {
+    @include flex(row, space-between, center);
+    gap: 2rem;
+    button {
+      cursor: pointer;
+      background-color: transparent;
+      border: none;
+    }
   }
 }

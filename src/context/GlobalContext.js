@@ -1,11 +1,32 @@
-import { useState, createContext, useContext } from "react";
+import { useState, createContext, useContext, useEffect } from "react";
 
-const GlobalContext = createContext();
+const GlobalState = createContext();
 
-export const useGlobalContext = () => {
-  return useContext(GlobalContext);
+export const useGlobalState = () => {
+  return useContext(GlobalState);
 };
 
-export const GlobalContextProvider = ({ children }) => {
-  return <GlobalContext.Provider value={{}}>{children}</GlobalContext.Provider>;
+export const GlobalStateProvider = ({ children }) => {
+  const [width, setWidth] = useState(window.innerWidth);
+
+  const setDimension = () => {
+    setWidth(window.innerWidth);
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", setDimension);
+    return () => {
+      window.removeEventListener("resize", setDimension);
+    };
+  }, [width]);
+
+  return (
+    <GlobalState.Provider
+      value={{
+        width,
+      }}
+    >
+      {children}
+    </GlobalState.Provider>
+  );
 };

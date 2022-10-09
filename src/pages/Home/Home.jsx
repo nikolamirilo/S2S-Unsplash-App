@@ -4,7 +4,7 @@ import { Items } from "../../components";
 const Home = () => {
   return (
     <div className="home">
-      <Items />
+      <Items type="all-images" />
     </div>
   );
 };

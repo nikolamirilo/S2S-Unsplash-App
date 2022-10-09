@@ -4,7 +4,7 @@
   min-height: 100vh;
   height: fit-content;
   @include media($sm) {
-    padding: 10vh 5vw 20vh 5vw;
+    padding: 5vh 3vw 20vh 3vw;
   }
   .single-item {
     width: 100%;
@@ -41,8 +41,12 @@
       padding: 5vh 0;
       @include flex(column, flex-start, flex-start);
       gap: 2vh;
+
       .main-user-info {
         @include flex(row, space-between, center);
+        @include media($xs) {
+          @include flex(row, space-around, center);
+        }
         gap: 2rem;
         .user-image {
           @include backgroundObjectImage(6rem, 6rem);
@@ -52,6 +56,9 @@
         .user-name {
           @include flex(column, flex-start, flex-start);
           gap: 0.5rem;
+          @include media($xs) {
+            width: 50%;
+          }
         }
       }
       .user-stats {

@@ -3,15 +3,29 @@ import Card from "../Card/Card";
 import { Grid, GridItem } from "react-masonry-grid";
 import data from "../../data.json";
 
-const Items = () => {
+const Items = (props) => {
   return (
     <div className="items">
+      {props.type === "similar-images" && <h1>Similar Images</h1>}
       <Grid gutter={10} columnWidth={350} rowHeight={10}>
-        {data.images &&
+        {props.type === "similar-images" &&
+          data.images &&
+          data.images
+            .filter((item, idx) => props.type === "similar-images" && item.id !== props.currentId)
+            .map((item, idx) => {
+              return (
+                <GridItem key={idx}>
+                  <Card image={item.urls.small} id={item.id} type="single-item-page" />
+                </GridItem>
+              );
+            })}
+
+        {props.type === "all-images" &&
+          data.images &&
           data.images.map((item, idx) => {
             return (
               <GridItem key={idx}>
-                <Card image={item.urls.small} id={item.id} />
+                <Card image={item.urls.small} id={item.id} type="home-page" />
               </GridItem>
             );
           })}

@@ -4,8 +4,9 @@ const Card = (props) => {
   return (
     <div
       className="card"
-      onClick={() => {
-        window.location.href = `photos/${props.id}`;
+      onClick={(e) => {
+        e.preventDefault();
+        window.location.pathname = `photos/${props.id}`;
       }}
     >
       <img src={props.image} alt="Unsplash image" />
