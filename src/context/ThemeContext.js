@@ -19,12 +19,15 @@ export const ThemeProvider = ({ children }) => {
   };
 
   const [theme, setTheme] = useState(themes.dark);
+  localStorage.setItem("theme", themes.dark);
 
   const setDark = () => {
     setTheme(themes.dark);
+    localStorage.setItem("theme", themes.dark);
   };
   const setLight = () => {
     setTheme(themes.light);
+    localStorage.setItem("theme", themes.light);
   };
 
   return <ThemeContext.Provider value={{ theme, setLight, setDark }}>{children}</ThemeContext.Provider>;

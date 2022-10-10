@@ -15,7 +15,7 @@ const Items = (props) => {
             .map((item, idx) => {
               return (
                 <GridItem key={idx}>
-                  <Card image={item.urls.small} id={item.id} type="single-item-page" />
+                  <Card image={item.urls.small} id={item.id} type={props.type} />
                 </GridItem>
               );
             })}
@@ -25,7 +25,7 @@ const Items = (props) => {
           data.images.map((item, idx) => {
             return (
               <GridItem key={idx}>
-                <Card image={item.urls.small} id={item.id} type="home-page" />
+                <Card image={item.urls.small} id={item.id} type={props.type} />
               </GridItem>
             );
           })}

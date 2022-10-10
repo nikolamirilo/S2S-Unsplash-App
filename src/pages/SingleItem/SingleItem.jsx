@@ -19,7 +19,7 @@ const SingleItem = () => {
               var updatedAt = moment(item.updated_at).startOf("hour").fromNow();
               var promotedAt = moment(item.promoted_at).subtract(1, "days").calendar();
               return (
-                <div className="single-item">
+                <div className="single-item" key={item.id}>
                   <div className="left-content">
                     <div className="image" style={{ backgroundImage: `url(${item.urls.regular})` }}></div>
                     <div className="image-stats">
