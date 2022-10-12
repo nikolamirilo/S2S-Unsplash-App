@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import logo from "../../../../assets/images/Logo.png";
-import { NavLink } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useGlobalState } from "./../../../../context/GlobalContext";
 import { GiHamburgerMenu } from "react-icons/gi";
-import { useTheme } from "./../../../../context/ThemeContext";
+import { useThemeContext } from "./../../../../context/ThemeContext";
+import { scrollFunction } from "../../../../helpers/scrollFunction";
 
 const Navbar = () => {
   const [isClicked, setIsClicked] = useState(false);
   const { width } = useGlobalState();
-  const { theme, setDark, setLight } = useTheme();
+  const { theme, setDark, setLight } = useThemeContext();
+  const { contactSection, itemsSection } = useGlobalState();
+  const navigate = useNavigate();
   const handleHamburgerClick = () => {
     if (isClicked) {
       setIsClicked(false);
@@ -21,6 +24,7 @@ const Navbar = () => {
       setIsClicked(false);
     }
   };
+
   return (
     <nav className="navbar">
       <div className="logo">
@@ -39,30 +43,30 @@ const Navbar = () => {
         )}
 
         <div className="links" style={{ display: !isClicked && width < 600 && "none" }}>
-          <NavLink
-            to="/"
+          <button
             onClick={() => {
+              navigate("/");
               closeSidebarOnLinkClick();
             }}
           >
             Home
-          </NavLink>
-          <NavLink
-            to="/"
+          </button>
+          <button
             onClick={() => {
+              scrollFunction(contactSection);
               closeSidebarOnLinkClick();
             }}
           >
             Contact
-          </NavLink>
-          <NavLink
-            to="/"
+          </button>
+          <button
             onClick={() => {
+              scrollFunction(itemsSection);
               closeSidebarOnLinkClick();
             }}
           >
             Images
-          </NavLink>
+          </button>
           <button
             onClick={() => {
               theme.backgroundColor === "white" ? setDark() : setLight();

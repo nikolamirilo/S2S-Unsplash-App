@@ -4,16 +4,19 @@ import "./index.scss";
 import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
 import { GlobalStateProvider } from "./context/GlobalContext";
-import { ThemeProvider } from "./context/ThemeContext";
+import { ThemeContextProvider } from "./context/ThemeContext";
+import { ImagesContextProvider } from "./context/ImagesContext";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Router>
       <GlobalStateProvider>
-        <ThemeProvider>
-          <App />
-        </ThemeProvider>
+        <ThemeContextProvider>
+          <ImagesContextProvider>
+            <App />
+          </ImagesContextProvider>
+        </ThemeContextProvider>
       </GlobalStateProvider>
     </Router>
   </React.StrictMode>

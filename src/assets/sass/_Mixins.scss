@@ -5,11 +5,13 @@
   align-items: $alignItems;
 }
 @mixin buttonStyle {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   padding: 0.5rem 2rem;
   background-color: $orange;
   border-radius: 20px;
   cursor: pointer;
+  font-weight: 600;
+  text-shadow: 1px 1px $black;
 }
 @mixin media($breakpoint) {
   @media screen and (max-width: $breakpoint) {

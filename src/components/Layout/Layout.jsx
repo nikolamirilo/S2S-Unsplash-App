@@ -1,10 +1,10 @@
 import React from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
-import { useTheme } from "./../../context/ThemeContext";
+import { useThemeContext } from "./../../context/ThemeContext";
 
 const Layout = ({ children }) => {
-  const { theme } = useTheme();
+  const { theme } = useThemeContext();
   return (
     <div className="layout">
       <div className="navbar-container">

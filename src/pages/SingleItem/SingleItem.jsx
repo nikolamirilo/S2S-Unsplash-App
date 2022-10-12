@@ -1,18 +1,18 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import data from "../../data.json";
 import { GoLocation } from "react-icons/go";
 import moment from "moment";
 import Items from "./../../components/Items/Items";
+import { useImagesContext } from "./../../context/ImagesContext";
 
 const SingleItem = () => {
   const { id } = useParams();
-  console.log(id);
+  const { images } = useImagesContext();
   return (
     <div className="single-item-page">
       <div className="single-item-container">
-        {data.images &&
-          data.images
+        {images &&
+          images
             .filter((item) => item.id == id)
             .map((item) => {
               var createdAt = moment(item.created_at).subtract(10, "days").calendar();

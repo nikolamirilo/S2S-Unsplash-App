@@ -1,12 +1,12 @@
 import React from "react";
 import { BsFacebook, BsGoogle } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
-import { useNavigate } from "react-router-dom";
+import { useGlobalState } from "./../../../../context/GlobalContext";
 
 const Footer = () => {
-  const navigate = useNavigate();
+  const { contactSection } = useGlobalState();
   return (
-    <footer className="footer">
+    <footer className="footer" ref={contactSection}>
       <div className="contact">
         <button
           onClick={() => {

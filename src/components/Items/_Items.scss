@@ -5,4 +5,18 @@
   @include media($xs) {
     padding: 10vh 5vw;
   }
+  h1 {
+    font-family: $headingFontFamily;
+  }
+  h2 {
+    font-size: 1.8rem;
+    font-family: $headingFontFamily;
+    width: 80%;
+    &:first-child {
+      text-align: left;
+    }
+    &:nth-child(2) {
+      text-align: right;
+    }
+  }
 }

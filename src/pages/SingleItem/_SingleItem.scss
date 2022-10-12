@@ -11,7 +11,7 @@
     @include grid(42% 50%);
     gap: 8%;
     @include media($sm) {
-      @include flex(column-reverse, none, none);
+      @include flex(column, none, none);
       gap: 2%;
     }
     .left-content {

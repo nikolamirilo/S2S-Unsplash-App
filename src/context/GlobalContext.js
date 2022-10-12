@@ -1,4 +1,4 @@
-import { useState, createContext, useContext, useEffect } from "react";
+import { useState, createContext, useContext, useEffect, useRef } from "react";
 
 const GlobalState = createContext();
 
@@ -20,10 +20,15 @@ export const GlobalStateProvider = ({ children }) => {
     };
   }, [width]);
 
+  const itemsSection = useRef();
+  const contactSection = useRef();
+
   return (
     <GlobalState.Provider
       value={{
         width,
+        itemsSection,
+        contactSection,
       }}
     >
       {children}
