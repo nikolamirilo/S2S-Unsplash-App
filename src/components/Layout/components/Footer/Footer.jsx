@@ -1,5 +1,5 @@
 import React from "react";
-import { BsFacebook, BsGoogle } from "react-icons/bs";
+import { BsGlobe, BsInstagram } from "react-icons/bs";
 import { AiOutlineMail } from "react-icons/ai";
 import { useGlobalState } from "./../../../../context/GlobalContext";
 
@@ -17,17 +17,17 @@ const Footer = () => {
         </button>
         <button
           onClick={() => {
-            window.location.href = "https://www.google.com/";
+            window.location.href = "https://unsplash.com/";
           }}
         >
-          <BsGoogle size={25} />
+          <BsGlobe size={25} />
         </button>
         <button
           onClick={() => {
-            window.location.href = "https://www.facebook.com/";
+            window.location.href = "https://www.instagram.com/unsplash/";
           }}
         >
-          <BsFacebook size={25} />
+          <BsInstagram size={25} />
         </button>
       </div>
       <p>Copyright @S2S-2022</p>

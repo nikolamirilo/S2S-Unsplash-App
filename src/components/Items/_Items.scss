@@ -3,7 +3,7 @@
   @include flex(column, center, center);
   gap: 10vh;
   @include media($xs) {
-    padding: 10vh 5vw;
+    padding: 10vh 0vw;
   }
   h1 {
     font-family: $headingFontFamily;
@@ -12,6 +12,9 @@
     font-size: 1.8rem;
     font-family: $headingFontFamily;
     width: 80%;
+    @include media($xs) {
+      font-size: 1.6rem;
+    }
     &:first-child {
       text-align: left;
     }

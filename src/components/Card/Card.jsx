@@ -8,9 +8,9 @@ const Card = (props) => {
       className="card"
       onClick={() => {
         if (props.type === "all-images") {
-          navigate(`photos/${props.id}`);
+          navigate(`/photos/${props.id}`);
         } else if (props.type === "similar-images") {
-          window.location.pathname = `photos/${props.id}`;
+          navigate(`/photos/${props.id}`, { replace: true });
         }
       }}
     >

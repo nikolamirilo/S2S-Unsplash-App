@@ -9,12 +9,13 @@
   @include media($sm) {
     background-size: cover;
   }
-  button {
+  .scroll-down-btn {
     @include buttonStyle;
     @include border;
     @include flex(column, center, center);
     padding: 0 3rem;
     color: $white;
+    font-weight: 600;
   }
   h1 {
     font-weight: 700;

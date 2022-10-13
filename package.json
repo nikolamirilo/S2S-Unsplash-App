@@ -10,6 +10,7 @@
     "react-masonry-grid": "^1.0.17",
     "react-router-dom": "^6.4.0",
     "react-scripts": "5.0.1",
+    "react-spinners": "^0.13.6",
     "sass": "^1.54.9"
   },
   "scripts": {

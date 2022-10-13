@@ -9,7 +9,7 @@ const Hero = () => {
     <div className="hero">
       <h1>Welcome to Unsplash Photo Gallery!</h1>
       <button
-        className="btn welcome-btn"
+        className="scroll-down-btn"
         onClick={() => {
           scrollFunction(itemsSection);
         }}

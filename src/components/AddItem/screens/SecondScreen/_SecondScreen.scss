@@ -1,0 +1,50 @@
+.second-screen {
+  height: 100%;
+  width: 100%;
+  @include flex(column, center, center);
+  gap: 3vh;
+  position: relative;
+  padding: 5vh 2vw;
+  .back-btn {
+    position: absolute;
+    top: 2vh;
+    left: 1vw;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  h2 {
+    color: $black;
+    font-weight: 500;
+  }
+  form {
+    @include flex(column, center, center);
+    gap: 1rem;
+    width: 80%;
+    @include media($xs) {
+      width: 100%;
+    }
+    label {
+      color: $black;
+      width: 100%;
+      text-align: left;
+      font-size: 1.2rem;
+    }
+
+    input {
+      @include border;
+      border-radius: 10px;
+      width: 100%;
+      font-size: 1.2rem;
+      padding: 0.3rem 1rem;
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+  .submit-btn {
+    @include buttonStyle;
+    @include border;
+    font-weight: 500;
+  }
+}

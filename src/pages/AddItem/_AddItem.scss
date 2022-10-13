@@ -1,0 +1,19 @@
+.add-item {
+  min-height: 100vh;
+  height: fit-content;
+  @include flex(column, center, center);
+  .add-item-content {
+    min-height: 75vh;
+    height: fit-content;
+    width: 35vw;
+    border-radius: 20px;
+    @include media($sm) {
+      width: 70vw;
+    }
+    @include media($xs) {
+      width: 96vw;
+    }
+    @include border;
+    background-color: $white;
+  }
+}

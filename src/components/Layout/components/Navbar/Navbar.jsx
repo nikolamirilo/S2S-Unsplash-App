@@ -65,7 +65,15 @@ const Navbar = () => {
               closeSidebarOnLinkClick();
             }}
           >
-            Images
+            Photos
+          </button>
+          <button
+            onClick={() => {
+              navigate("/add-photo");
+              closeSidebarOnLinkClick();
+            }}
+          >
+            Add Photo
           </button>
           <button
             onClick={() => {
